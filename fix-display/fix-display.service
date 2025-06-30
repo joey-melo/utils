@@ -1,0 +1,10 @@
+[Unit]
+Description=Monitor and auto-fix display resolution
+After=graphical.target
+
+[Service]
+ExecStart=%h/.local/bin/fix-display.sh
+Restart=always
+
+[Install]
+WantedBy=default.target
