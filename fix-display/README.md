@@ -1,8 +1,6 @@
 # Fix Display - Auto Display Resolution Fixer
 
-Auto Display Resolution Fixer
-
-This tool monitors your display resolution on Kali Linux (and probably other Linux distros, but not tested) and automatically resets it to the recommended resolution if it changes. 
+This tool monitors your display resolution on Kali Linux and automatically resets it to the recommended resolution if it changes. 
 
 ## Installation
 
@@ -32,16 +30,16 @@ The service automatically triggers the script when you start it.
 
 To view status:
 
-`systemctl --user status display-monitor.service`
+`systemctl --user status fix-display.service`
 
 To stop or restart:
 
 ```
-systemctl --user stop display-monitor.service
-systemctl --user restart display-monitor.service
+systemctl --user stop fix-display.service
+systemctl --user restart fix-display.service
 ```
 
 ## How it works
 - The script runs in the background every second.
-- If the current resolution is not the recommended one, it calls your existing fix-display script.
-- Logs (optional) are stored in ~/.local/share/fix-display.log.
+- If the current resolution is not the recommended one, it will change it to the recommended one.
+- Logs are stored in ~/.local/share/fix-display.log.
